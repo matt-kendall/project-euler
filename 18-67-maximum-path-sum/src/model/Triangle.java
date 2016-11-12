@@ -24,7 +24,8 @@ public class Triangle {
         if (rowsAreValid(rows)) {
             this.rows = Collections.unmodifiableList(new ArrayList<>(rows));
         } else {
-            throw new InvalidTriangleException();
+            throw new InvalidTriangleException(
+                    "Triangle must be made of at least one row in sequential size order from 1 - N");
         }
     }
 

@@ -6,9 +6,10 @@ package exception;
 public class InvalidTriangleException extends RuntimeException {
 
     /**
-     * Create a new InvalidTriangleException.
+     * Create a new InvalidTriangleException with a given message.
+     * @param message exception message
      */
-    public InvalidTriangleException() {
-        super("Triangle must be made of at least one row in sequential size order from 1 - N");
+    public InvalidTriangleException(String message) {
+        super(message);
     }
 }
