@@ -1,3 +1,5 @@
+package model;
+
 import exception.EmptyRowException;
 import model.Point;
 import model.Row;

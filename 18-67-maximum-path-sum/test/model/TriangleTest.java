@@ -1,3 +1,5 @@
+package model;
+
 import exception.InvalidTriangleException;
 import model.Point;
 import model.Row;
