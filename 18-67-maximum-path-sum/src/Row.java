@@ -24,7 +24,7 @@ public class Row {
     }
 
     /**
-     * The list of points which make up this row.
+     * Returns an unmodifiable view on the list of points which make up this row.
      * @return points in this row
      */
     public List<Point> points() {
