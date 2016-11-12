@@ -1,3 +1,5 @@
+package model;
+
 import exception.InvalidTriangleException;
 
 import java.util.ArrayList;

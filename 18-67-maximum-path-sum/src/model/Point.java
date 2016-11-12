@@ -1,3 +1,5 @@
+package model;
+
 /**
  * Represents a point in a number triangle.
  */

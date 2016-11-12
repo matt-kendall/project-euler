@@ -1,4 +1,7 @@
 import exception.InvalidTriangleException;
+import model.Point;
+import model.Row;
+import model.Triangle;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

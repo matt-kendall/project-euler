@@ -1,4 +1,6 @@
 import exception.EmptyRowException;
+import model.Point;
+import model.Row;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
