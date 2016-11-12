@@ -1,14 +1,11 @@
 package model;
 
 import exception.InvalidTriangleException;
-import model.Point;
-import model.Row;
-import model.Triangle;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import testingtools.BaseTriangleTest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -16,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Tests for the Triangle class cover immutabilty, validity, behaviour.
  */
-public class TriangleTest {
+public class TriangleTest extends BaseTriangleTest {
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -68,19 +65,4 @@ public class TriangleTest {
         triangle.rows().clear();
     }
 
-    private Row makeRowOfSize(int length) {
-        List<Point> points = new ArrayList<>();
-        for (int i = 0; i < length; i++) {
-            points.add(new Point(i));
-        }
-        return new Row(points);
-    }
-
-    private List<Row> makeRows(int... rowSizes) {
-        List<Row> rows = new ArrayList<>();
-        for (int size : rowSizes) {
-            rows.add(makeRowOfSize(size));
-        }
-        return rows;
-    }
 }
