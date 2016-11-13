@@ -1,3 +1,5 @@
+package solvers;
+
 import model.Triangle;
 
 /**
