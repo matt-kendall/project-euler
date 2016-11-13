@@ -1,15 +1,13 @@
 package routing;
 
-import model.Row;
 import model.Triangle;
 import org.junit.Before;
 import org.junit.Test;
 import testingtools.BaseTriangleTest;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests that the PossibleRouteFinder correctly determines all possible routes.
@@ -71,13 +69,5 @@ public class PossibleRouteFinderTest extends BaseTriangleTest {
         List<Route> routes = routeFinder.findRoutes(triangle);
 
         assertEquals(Math.pow(2, 9), routes.size(), 0.001);
-    }
-
-    private Triangle makeTriangleOfSize(int size) {
-        List<Row> rows = new ArrayList<>();
-        for (int i = 1; i <= size; i++) {
-            rows.add(makeRowOfSize(i));
-        }
-        return new Triangle(rows);
     }
 }
