@@ -26,10 +26,20 @@ public class Row {
     }
 
     /**
-     * Returns an unmodifiable view on the list of points which make up this row.
-     * @return points in this row
+     * The size of the row (i.e. number of points)
+     * @return row size
      */
-    public List<Point> points() {
-        return this.points;
+    public int size() {
+        return this.points.size();
+    }
+
+
+    /**
+     * Get a point at a specified index in the row
+     * @param index index in the row to obtain point for
+     * @return point
+     */
+    public Point point(int index) {
+        return this.points.get(index);
     }
 }

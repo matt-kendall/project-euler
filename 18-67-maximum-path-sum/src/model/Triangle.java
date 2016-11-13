@@ -53,7 +53,7 @@ public class Triangle {
         int rowCounter = 1;
         for (Row row : rows) {
             // Validate that the row size increases by one each row
-            if (row.points().size() != rowCounter) {
+            if (row.size() != rowCounter) {
                 return false;
             }
             rowCounter++;

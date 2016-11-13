@@ -62,6 +62,14 @@ public class TriangleTest extends BaseTriangleTest {
         List<Row> rows = makeRows(1, 2);
         Triangle triangle = new Triangle(rows);
 
-        assertEquals(2, triangle.row(1).points().size());
+        assertEquals(2, triangle.row(1).size());
+    }
+
+    @Test
+    public void canGetTriangleSize() {
+        List<Row> rows = makeRows(1, 2, 3);
+        Triangle triangle = new Triangle(rows);
+
+        assertEquals(3, triangle.size());
     }
 }

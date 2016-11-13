@@ -76,9 +76,9 @@ public class TriangleLoaderTest {
     }
 
     private void assertRowContains(Row row, int... pointValues) {
-        assertEquals(pointValues.length, row.points().size());
+        assertEquals(pointValues.length, row.size());
         for (int i = 0; i < pointValues.length; i++) {
-            assertEquals(pointValues[i], row.points().get(i).value());
+            assertEquals(pointValues[i], row.point(i).value());
         }
     }
 }

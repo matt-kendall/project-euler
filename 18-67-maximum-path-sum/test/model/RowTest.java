@@ -35,9 +35,9 @@ public class RowTest {
                 new Point(1),
                 new Point(2)
         ));
-        assertEquals(2, row.points().size());
-        assertEquals(1, row.points().get(0).value());
-        assertEquals(2, row.points().get(1).value());
+        assertEquals(2, row.size());
+        assertEquals(1, row.point(0).value());
+        assertEquals(2, row.point(1).value());
     }
 
     @Test
@@ -56,20 +56,6 @@ public class RowTest {
         Row row = new Row(points);
 
         points.clear(); // Mutate the original list
-        assertEquals(1, row.points().size());
+        assertEquals(1, row.size());
     }
-
-
-    @Test
-    public void rowIsImmutableByPointsMethod() {
-        // Verify that altering the list returned by the points method does not mutate the Row (throws exception)
-        List<Point> points = new ArrayList<>();
-        points.add(new Point(1));
-
-        Row row = new Row(points);
-
-        expectedException.expect(UnsupportedOperationException.class);
-        row.points().clear(); // Mutate the returned list
-    }
-
 }
