@@ -3,7 +3,6 @@ package model;
 import exception.InvalidTriangleException;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -22,7 +21,7 @@ public class Triangle {
      */
     public Triangle(List<Row> rows) {
         if (rowsAreValid(rows)) {
-            this.rows = Collections.unmodifiableList(new ArrayList<>(rows));
+            this.rows = new ArrayList<>(rows);
         } else {
             throw new InvalidTriangleException(
                     "Triangle must be made of at least one row in sequential size order from 1 - N");
@@ -30,11 +29,20 @@ public class Triangle {
     }
 
     /**
-     * Returns an unmodifiable view on the rows in this triangle.
-     * @return the rows in this triangle
+     * Get the size of the triangle (i.e. number of rows).
+     * @return triangle size
      */
-    public List<Row> rows() {
-        return this.rows;
+    public int size() {
+        return this.rows.size();
+    }
+
+    /**
+     * Get a specific row by index
+     * @param index index of the row to return
+     * @return row
+     */
+    public Row row(int index) {
+        return this.rows.get(index);
     }
 
     private boolean rowsAreValid(List<Row> rows) {

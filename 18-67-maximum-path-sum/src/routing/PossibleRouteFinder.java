@@ -22,7 +22,7 @@ public class PossibleRouteFinder {
         List<Route> routes = getStartingRoutes();
 
         // Now run routes of depths 3 .. N where N is the triangle size
-        for (int i = 3; i <= triangle.rows().size(); i++) {
+        for (int i = 3; i <= triangle.size(); i++) {
             routes = expandRouteDepth(routes);
         }
         return routes;

@@ -41,10 +41,10 @@ public class TriangleLoaderTest {
 
         Triangle triangle = triangleLoader.loadFile(TEST_FILENAME);
 
-        assertEquals(3, triangle.rows().size());
-        assertRowContains(triangle.rows().get(0), 1);
-        assertRowContains(triangle.rows().get(1), 2, 3);
-        assertRowContains(triangle.rows().get(2), 4, 5, 6);
+        assertEquals(3, triangle.size());
+        assertRowContains(triangle.row(0), 1);
+        assertRowContains(triangle.row(1), 2, 3);
+        assertRowContains(triangle.row(2), 4, 5, 6);
     }
 
     @Test
@@ -63,11 +63,11 @@ public class TriangleLoaderTest {
 
         Triangle triangle = triangleLoader.loadFile("triangle-4-rows.txt");
 
-        assertEquals(4, triangle.rows().size());
-        assertRowContains(triangle.rows().get(0), 3);
-        assertRowContains(triangle.rows().get(1), 7, 4);
-        assertRowContains(triangle.rows().get(2), 2, 4, 6);
-        assertRowContains(triangle.rows().get(3), 8, 5, 9, 3);
+        assertEquals(4, triangle.size());
+        assertRowContains(triangle.row(0), 3);
+        assertRowContains(triangle.row(1), 7, 4);
+        assertRowContains(triangle.row(2), 2, 4, 6);
+        assertRowContains(triangle.row(3), 8, 5, 9, 3);
     }
 
     private void configureFileLoader(String filename, String... lines) throws FileNotFoundException {

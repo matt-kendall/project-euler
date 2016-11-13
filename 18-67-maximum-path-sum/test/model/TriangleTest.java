@@ -21,7 +21,7 @@ public class TriangleTest extends BaseTriangleTest {
     @Test
     public void canConstructTriangleWithValidRows() {
         Triangle triangle = new Triangle(makeRows(1, 2, 3));
-        assertEquals(3, triangle.rows().size());
+        assertEquals(3, triangle.size());
     }
 
     @Test
@@ -54,15 +54,14 @@ public class TriangleTest extends BaseTriangleTest {
         Triangle triangle = new Triangle(rows);
 
         rows.clear(); // Mutate the rows list
-        assertEquals(2, triangle.rows().size());
+        assertEquals(2, triangle.size());
     }
 
     @Test
-    public void triangleIsImmutableByRowsMethod() {
-        Triangle triangle = new Triangle(makeRows(1, 2));
+    public void canGetRowByIndex() {
+        List<Row> rows = makeRows(1, 2);
+        Triangle triangle = new Triangle(rows);
 
-        expectedException.expect(UnsupportedOperationException.class);
-        triangle.rows().clear();
+        assertEquals(2, triangle.row(1).points().size());
     }
-
 }
