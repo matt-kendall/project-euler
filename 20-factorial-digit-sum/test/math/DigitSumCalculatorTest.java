@@ -3,6 +3,8 @@ package math;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.Assert.*;
 
 /**
@@ -46,9 +48,14 @@ public class DigitSumCalculatorTest {
     public void canCalculateSumOfOneHundredTwentySeven() {
         assertDigitSum(127, 10);
     }
-    
+
+    @Test
+    public void canCalculateSumOf3628800() {
+        assertDigitSum(3628800, 27);
+    }
+
     private void assertDigitSum(int digits, int expectedSum) {
-        int calculatedSum = digitSumCalculator.sumDigits(digits);
+        int calculatedSum = digitSumCalculator.sumDigits(BigInteger.valueOf(digits));
         assertEquals(expectedSum, calculatedSum);
     }
     

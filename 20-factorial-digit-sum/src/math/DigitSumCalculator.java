@@ -1,9 +1,13 @@
 package math;
 
+import java.math.BigInteger;
+
 /**
  * Calculates the sum of all digits in a number.
  */
 public final class DigitSumCalculator {
+
+    private static final BigInteger DECIMAL_BASE = BigInteger.TEN;
 
     /**
      * Sum the digits of a number.
@@ -11,13 +15,13 @@ public final class DigitSumCalculator {
      * @param value the value whose digits to sum
      * @return the sum of the digits of the given number
      */
-    public int sumDigits(int value) {
+    public int sumDigits(BigInteger value) {
         int digitSum = 0;
         // Take the rightmost digit each turn by taking the remainder modulo 10
-        while (value > 0) {
-            int rightMostDigit = value % 10;
+        while (value.signum() == 1) {
+            long rightMostDigit = value.mod(DECIMAL_BASE).intValue();
             digitSum += rightMostDigit;
-            value /= 10; // Divide by 10 to lose the rightmost digit (integer division)
+            value = value.divide(DECIMAL_BASE) ; // Divide by 10 to lose the rightmost digit (integer division)
         }
         return digitSum;
     }
